@@ -22,6 +22,31 @@ To use the very deep CNN model [Conneau et al. (2016)](https://arxiv.org/abs/160
 
 Please set the input data path to your directory.
 
+To view the parser details.
+
+```
+python py-cdnn.py -h
+
+Usage: py-cdnn.py [options]
+
+Options:
+  -h, --help            
+  -f FLAG, --flag=FLAG  Theano Flags to indicate whether model is deep or not
+  -m MAXLEN, --max=MAXLEN, --maxlen=MAXLEN
+                        Specify the max length
+  -e NUM_EPOCH, --epoch=NUM_EPOCH, --epochs=NUM_EPOCH
+                        Specify the number of training iterations performed on
+                        the network
+  -b BATCH_SIZE, --batch=BATCH_SIZE, --batch_size=BATCH_SIZE
+                        Specify the batch size for the model
+  --z1=Z1, --z1_size=Z1
+                        Specify the size of the first fully connected layer
+  --z2=Z2, --z2_size=Z2
+                        Specify the size of the second fully connected layer
+  -p PATH, --path=PATH  Specify the project path
+
+```
+
 Running
 -------
 
