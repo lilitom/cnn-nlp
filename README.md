@@ -1,6 +1,8 @@
 Character-level CNNs in NLP
 ========
-This packages contains a Theano-based Keras implementation of a Deep Character-level Convolutional Network inspired by "Very Deep Convolutional Networks for Natural Language Processing" [Conneau et al. (2016)](https://arxiv.org/abs/1606.01781). Our Deep Character-level CNN implemenation is based on a model with 9 layers and uses max-pooling with kernel size 3 and stride 2. However, we add two modifications that make our network more efficient. First, we move the Batchnormalization layer after the pooling layers, therefore successive convolutional layers are better able to capture nonlinearites. Second, we add a small amount of Dropout regularization immediatley after the Batchnormalization. The code is easily adaptable to the deeper models, following block convolutional methodology in [Conneau et al. (2016)]. 
+This packages contains a Theano-based Keras implementation of a Deep Character-level Convolutional Network inspired by "Very Deep Convolutional Networks for Natural Language Processing" [Conneau et al. (2016)](https://arxiv.org/abs/1606.01781). Our Deep Character-level CNN implemenation is based on a model with 9 layers and uses max-pooling with kernel size 3 and stride 2. However, we add two modifications that make our network more efficient, which enables the network to achieve the same classificaiton accuracy as a 29 layer network.  
+
+First, we move the Batchnormalization layer after the pooling layers, therefore successive convolutional layers are better able to capture nonlinearites. Second, we add a small amount of Dropout regularization immediatley after the Batchnormalization. The code is easily adaptable to the deeper models, following block convolutional methodology in [Conneau et al. (2016)]. 
 
 Also this package contains the Keras implementation of "Character-level Convolutional Networks for Text
 Classificationin" neural network model by [Zhang et al. (2015)](https://arxiv.org/abs/1509.01626) that is available at [Crepe](https://github.com/zhangxiangxiao/Crepe), which was originally written with Torch.
@@ -53,7 +55,7 @@ Running
 Then run the model using the following command:
 
 ```
-python py-cdnn.py -f 1 -m 1300 -e 10 -b 64 --z1 1024 --z2 1024 -p /home/neil/projects/py-cdnn-text
+python py-cdnn.py -f 1 -m 1300 -e 10 -b 64 --z1 2048 --z2 1024 -p /home/neil/projects/py-cdnn-text
 ```
 
 Citation
