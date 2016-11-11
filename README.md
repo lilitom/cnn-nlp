@@ -4,7 +4,7 @@ This packages contains a Theano-based Keras implementation of a Deep Character-l
 
 First, we move the Batchnormalization layer after the pooling layers, therefore successive convolutional layers are better able to capture nonlinearites. Second, we add a small amount of Dropout regularization immediatley after the Batchnormalization. The code is easily adaptable to the deeper models, following block convolutional methodology in [Conneau et al. (2016)]. 
 
-![model](model_short.png)
+![model](model_short2.png)
 
 Also this package contains the Keras implementation of "Character-level Convolutional Networks for Text
 Classificationin" neural network model by [Zhang et al. (2015)](https://arxiv.org/abs/1509.01626) that is available at [Crepe](https://github.com/zhangxiangxiao/Crepe), which was originally written with Torch.
