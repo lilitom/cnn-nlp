@@ -22,7 +22,7 @@ git clone https://github.com/sci-lab-uoit/cnn-nlp
 Details
 -------
 
-To use the very deep CNN model [Conneau et al. (2016)](https://arxiv.org/abs/1606.01781), change deepFlag to 1 and to use the simpler CNN model [Zhang et al. (2015)](https://arxiv.org/abs/1509.01626),  set deepFlag to 0.
+To use our Deep Character-Level CNN model change deepFlag to 1 and to use the simpler CNN model [Zhang et al. (2015)](https://arxiv.org/abs/1509.01626),  set deepFlag to 0.
 
 Please set the input data path to your directory.
 
