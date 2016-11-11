@@ -1,6 +1,6 @@
 Character-level CNNs in NLP
 ========
-This packages contains a Theano-based Keras implementation of a Deep Character-level Convolutional Network inspired by "Very Deep Convolutional Networks for Natural Language Processing" [Conneau et al. (2016)](https://arxiv.org/abs/1606.01781). Our Deep Character-level CNN implemenation is based on a model with 9 layers and uses max-pooling with kernel size 3 and stride 2. However, we add two modifications that make our network more efficient, which enables the network to achieve the same classificaiton accuracy as a 29 layer network.  
+This packages contains a Theano-based Keras implementation of a Deep Character-level Convolutional Network inspired by "Very Deep Convolutional Networks for Natural Language Processing" [Conneau et al. (2016)](https://arxiv.org/abs/1606.01781). Our Deep Character-level CNN implemenation is based on a model with 9 layers and uses max-pooling with kernel size 3 and stride 2. However, we add two modifications that make our network more efficient (err = 8.66% on AG news dataset), which enables the network to achieve the same classificaiton error rate as a 29 layer network  (err = 8.67% on AG news dataset).  
 
 First, we move the Batchnormalization layer after the pooling layers, therefore successive convolutional layers are better able to capture nonlinearites. Second, we add a small amount of Dropout regularization immediatley after the Batchnormalization. The code is easily adaptable to the deeper models, following block convolutional methodology in [Conneau et al. (2016)]. 
 
