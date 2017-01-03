@@ -1,6 +1,5 @@
 import sys
 from optparse import OptionParser
-import deep
 from pprint import pprint
 
 # check if arguments are given
@@ -18,12 +17,19 @@ parser.add_option('-e', '--epoch', '--epochs', type='int', dest='num_epoch', hel
 parser.add_option('-b', '--batch', '--batch_size', type='int', dest='batch_size', help='Specify the batch size for the model', default=64)
 parser.add_option('--z1', '--z1_size', type='int', dest='z1', help='Specify the size of the first fully connected layer', default=1024)
 parser.add_option('--z2', '--z2_size', type='int', dest='z2', help='Specify the size of the second fully connected layer', default=1024)
-parser.add_option('-p','--path', type='string', dest='path', help='Specify the project path')
+parser.add_option('--train', type='string', dest='train', help='Specify the training data path')
+parser.add_option('--test', type='string', dest='test', help='Specify the testing data path')
 
 
 # get arguments and display help if given as arg
 (options, args) = parser.parse_args()
-# create conv neural network
-deep.createModel([options.flag,options.maxlen, options.num_epoch, options.batch_size, options.z1, options.z2, options.path])
 
-# example use: python py-cdnn.py -f 1 -m 1300 -e 10 -b 64 --z1 1024 --z2 1024 -p /home/neil/projects/py-cdnn-text
+# execute very deep cnn
+if options.flag == 1:
+    execfile("conneau.py")
+elif options.flag == 0:
+    execfile("zhang.py")
+else:
+    pprint('Model number not specified')
+
+# example use: python main.py -f 1 -m 1300 -e 10 -b 64 --z1 1024 --z2 1024 --train ag_news_csv/train.csv --test ag_news_csv/test.csv
